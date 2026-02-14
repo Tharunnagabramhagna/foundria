@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foundira • Smart Lost & Found</title>
+  <meta name="description" content="Foundira — Reconnecting People with What They Lost" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: "class" };
+  </script>
+  <link rel="preload" href="./public/images/foundira_logo_full.png" as="image" />
+  <link rel="preload" href="./public/images/foundira_icon.png" as="image" />
+
+  <!-- React & Router -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-router-dom@5.3.4/umd/react-router-dom.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    .animate-fade-in-up {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased overflow-hidden">
+  <div id="app"></div>
+
+  <!-- Utils / Shared -->
+  <script type="text/babel" src="./src/frontend/components/ImageSlider.jsx"></script>
+
+  <!-- Contexts -->
+  <script type="text/babel" src="./src/context/ThemeContext.jsx"></script>
+  <script type="text/babel" src="./src/context/AuthContext.jsx"></script>
+
+  <!-- APIs -->
+  <script src="./src/backend/api/authApi.js"></script>
+  <script src="./src/backend/api/itemsApi.js"></script>
+  <script src="./src/backend/api/chatApi.js"></script>
+  <script src="./src/backend/api/userApi.js"></script> <!-- Added userApi -->
+  <script src="./src/backend/api/notificationApi.js"></script> <!-- Added notificationApi -->
+
+
+  <!-- Components -->
+  <script type="text/babel" src="./src/frontend/components/ThemeToggle.jsx"></script>
+  <script src="./src/utils/matchEngine.js"></script> <!-- Added MatchEngine -->
+  <script type="text/babel" src="./src/frontend/components/Sidebar.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/SearchBar.jsx"></script> <!-- Added SearchBar -->
+  <script type="text/babel" src="./src/frontend/components/UpdateSuccessAnimation.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/DateTimePicker.jsx"></script> <!-- Added DateTimePicker -->
+  <script type="text/babel" src="./src/frontend/components/Header.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/ItemCard.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/PostForm.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/QRGenerator.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/LoginSuccessAnimation.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/Login.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/Signup.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/LogoHeader.jsx"></script>
+  <script type="text/babel" src="./src/frontend/components/AppLogo.jsx"></script> <!-- AppLogo component -->
+  <script type="text/babel" src="./src/frontend/components/StatCard.jsx"></script> <!-- StatCard component -->
+  <script type="text/babel" src="./src/frontend/components/StatsModal.jsx"></script> <!-- StatsModal component -->
+
+  <script type="text/babel" src="./src/frontend/components/ProtectedRoute.jsx"></script>
+  <!-- ProtectedRoute component -->
+
+  <!-- Pages -->
+  <script type="text/babel" src="./src/frontend/pages/AuthPage.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/IntroAnimation.jsx"></script> <!-- New Intro Animation -->
+  <script type="text/babel" src="./src/frontend/pages/SplashScreen.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/DashboardHome.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/Lost.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/Found.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/MyItems.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/Matches.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/Chat.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/Profile.jsx"></script>
+  <script type="text/babel" src="./src/frontend/pages/Dashboard.jsx"></script>
+
+  <!-- Entry -->
+  <script type="text/babel" src="./src/App.jsx"></script>
+</body>
+
+</html>
